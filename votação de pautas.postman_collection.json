@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "2bd1f72d-e923-4af4-becd-99fbff7cc99c",
+		"name": "votação de pautas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2449502"
+	},
+	"item": [
+		{
+			"name": "pautas",
+			"item": [
+				{
+					"name": "criar pauta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"description\": \"Você é a favor da volta do horário de verão?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/sicred/v1/agenda-items",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sicred",
+								"v1",
+								"agenda-items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "abrir pauta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"minutes\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/sicred/v1/agenda-items/open/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sicred",
+								"v1",
+								"agenda-items",
+								"open",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resultados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/sicred/v1/agenda-items/vote-counting/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sicred",
+								"v1",
+								"agenda-items",
+								"vote-counting",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "votos",
+			"item": [
+				{
+					"name": "votar",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cpf\": \"21533900019\",\n    \"idAgendaItem\": 1,\n    \"vote\": \"S\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/sicred/v1/votes",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"sicred",
+								"v1",
+								"votes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
